@@ -2,8 +2,14 @@ name: Build and Release Mod
 
 on:
   push:
-    branches: [ "master" ]
-
+    tags:
+      - 'v*'                # пуш тега v1.0.0 запускает релиз
+  workflow_dispatch:         # или вручную из вкладки Actions
+    inputs:
+      version:
+        description: 'Версия релиза (например, 1.0.0)'
+        required: true
+        
 permissions:
   contents: write
 
