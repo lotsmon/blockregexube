@@ -2,13 +2,7 @@ name: Build and Release Mod
 
 on:
   push:
-    tags:
-      - 'v*'
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Release version (e.g., 1.0.0)'
-        required: true
+    branches: [ "master" ]
 
 permissions:
   contents: write
